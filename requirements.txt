@@ -1,0 +1,3 @@
+Quart==0.20.0
+twitchAPI==4.4.0
+uvicorn==0.34.0

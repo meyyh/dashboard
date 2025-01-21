@@ -1,0 +1,7 @@
+#python venv things
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+tokens.json
