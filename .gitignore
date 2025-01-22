@@ -1,7 +1,12 @@
 #python venv things
 Include/
+include/
 Lib/
+lib/
+lib64/
+lib64
 Scripts/
+bin/
 pyvenv.cfg
 
 tokens.json
