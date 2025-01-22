@@ -120,3 +120,26 @@ async def live_users():
 if __name__ == '__main__':
     # Run the app with Uvicorn to handle async operations
     uvicorn.run(app, host="0.0.0.0", port=5000)
+
+
+
+# idea for getting system info
+
+# import psutil
+
+# cpu_perc = psutil.cpu_percent(interval=1)
+# # gives an object with many fields
+# psutil.virtual_memory()
+
+# # you can convert that object to a dictionary
+# dict(psutil.virtual_memory()._asdict())
+
+# # you can have the percentage of used RAM
+# ram_perc = psutil.virtual_memory().percent
+
+# # you can calculate percentage of available memory
+# psutil.virtual_memory().available * 100 / psutil.virtual_memory().total
+
+
+# print(cpu_perc)
+# print(ram_perc)

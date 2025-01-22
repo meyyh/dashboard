@@ -18,6 +18,13 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .user:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         .user img {
             width: 50px;
@@ -49,8 +56,10 @@
                 usersContainer.innerHTML = ''; // Clear existing users
 
                 users.forEach(user => {
-                    const userDiv = document.createElement('div');
-                    userDiv.className = 'user';
+                    const userLink = document.createElement('a');
+                    userLink.href = `https://twitch.tv/${user.display_name}`;
+                    userLink.target = '_blank'; // Open in a new tab
+                    userLink.className = 'user';
 
                     const img = document.createElement('img');
                     img.src = user.profile_image_url;
@@ -76,10 +85,10 @@
                     detailsDiv.appendChild(titleSpan);
                     detailsDiv.appendChild(viewersSpan);
 
-                    userDiv.appendChild(img);
-                    userDiv.appendChild(detailsDiv);
+                    userLink.appendChild(img);
+                    userLink.appendChild(detailsDiv);
 
-                    usersContainer.appendChild(userDiv);
+                    usersContainer.appendChild(userLink);
                 });
             } catch (error) {
                 console.error('Error fetching Twitch users:', error);
